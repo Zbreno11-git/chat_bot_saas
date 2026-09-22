@@ -21,6 +21,9 @@ __pycache__/
 .env.*
 !.env.example
 
+# Private planning docs
+ask_breno_visao_roadmap.md
+
 # Editors / OS
 .vscode/
 .idea/
