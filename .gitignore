@@ -1,0 +1,27 @@
+# Virtualenv (lives in the project root)
+bin/
+lib/
+lib64
+share/
+include/
+pyvenv.cfg
+CACHEDIR.TAG
+.lock
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store

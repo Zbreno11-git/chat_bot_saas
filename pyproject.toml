@@ -1,0 +1,13 @@
+[project]
+name = "chat-bot-saas"
+version = "0.1.0"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+extend-exclude = ["bin", "lib", "lib64", "share"]
+
+[tool.black]
+extend-exclude = "^/(bin|lib|lib64|share)/"
