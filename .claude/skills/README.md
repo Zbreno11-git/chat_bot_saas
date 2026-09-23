@@ -1,9 +1,10 @@
 # Project skills
 
-Third-party agent skills vendored for Claude Code, chosen for the Ask Breno MVP stack (Next.js + TypeScript, Supabase/Postgres, LLM chat with citations). Each folder keeps its upstream license.
+Third-party agent skills vendored for Claude Code, chosen for the Ask Breno MVP stack (Next.js + TypeScript, Supabase/Postgres, LLM chat with citations), plus one first-party skill written for this project. Each vendored folder keeps its upstream license.
 
 | Skill | Use it for | Source (commit) | License |
 | --- | --- | --- | --- |
+| socratic-step-recap | End-of-step explanation of what/how/why, Breno-first | this repo | — |
 | frontend-design | Distinctive, production-grade UI | anthropics/skills (34040c9) | Apache-2.0 |
 | webapp-testing | Playwright checks of the running app | anthropics/skills (34040c9) | Apache-2.0 |
 | vercel-react-best-practices | React/Next.js performance rules | vercel-labs/agent-skills (063bee9) | MIT |

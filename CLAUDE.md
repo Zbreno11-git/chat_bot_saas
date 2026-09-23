@@ -8,16 +8,15 @@ The full vision and roadmap is in `ask_breno_visao_roadmap.md`. It is local only
 
 ## How we work (read first)
 
-**MVP = study project. Breno writes the code; Claude teaches and reviews.**
+**MVP = study project, but Claude writes the code.** Started as "Breno writes, Claude teaches"; changed 2026-09-23 because Breno knows no JavaScript/TypeScript at all and line-by-line teaching was blocking progress. Breno still wants to understand what's built — the mechanism changed from "learn by typing" to "learn by having the reasoning explained after the fact."
 
-- Baby steps. Do not write feature code for Breno. Small unblockers are fine (config, explaining errors, a one-line fix after he tried).
-- Teaching style depends on the topic: walk through brand-new topics line by line; give a task with hints once he knows the basics.
-- Breno's background: basic Python scripts and SQL, has used Supabase, **no JavaScript/TypeScript yet**. Link new ideas to Python equivalents where they help.
+- Claude writes the feature code and drives implementation forward for each step.
+- Claude pauses **only at the end of each step** (not mid-step) to explain, Socratically and at a level Breno can follow despite not knowing JS/TS: what was built, how, and why — decisions, trade-offs, any bug hit and how it was fixed. Chat only, nothing extra committed as a decision log.
+- Breno's background: basic Python scripts and SQL, has used Supabase, **no JavaScript/TypeScript**. Link new ideas to Python equivalents where they help.
 - Explanations in Portuguese, technical terms in English. **Code, comments and commit messages in English.**
-- Reviews are professional-strict: bugs, security, naming, style. Breno fixes everything.
-- Each step: its own branch, then a GitHub PR, then Claude reviews the PR, then Breno merges.
+- Each step: its own branch, then Claude writes the code and opens a GitHub PR with the step's explanation, then Breno reviews and merges. Claude does not commit/merge/push to main during the MVP.
 - Tests are written right after each feature, in the same step.
-- Pace: 5–10 h/week, no deadline. Learning comes before speed.
+- Pace: 5–10 h/week, no deadline.
 
 **After the MVP: full mode.** Breno directs and Claude codes, and may commit, merge and push to main once the tests pass.
 
