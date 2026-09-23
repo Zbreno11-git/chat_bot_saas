@@ -11,7 +11,9 @@ export type SearchResult = {
 };
 
 // Shape of a row returned by the search_knowledge_chunks Postgres function
-// (see web/supabase/migrations/20260923200121_add-knowledge-chunks-search.sql).
+// (see web/supabase/migrations/20260923200121_add-knowledge-chunks-search.sql
+// and .../20260923215202_or_match_knowledge_chunks_search.sql, which changed
+// its matching semantics but not this row shape).
 type SearchKnowledgeChunksRow = {
   chunk_id: string;
   body: string;
