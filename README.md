@@ -1,25 +1,12 @@
-# Chat Bot SaaS
+# Ask Breno
 
-FastAPI backend for a chatbot SaaS.
+Public chat-first page where visitors ask about Breno's experience, projects and stack. See `CLAUDE.md` for the working agreement, stack decisions and architecture rules.
 
-## Setup
+## Status
 
-```bash
-source bin/activate            # venv lives in the project root
-uv pip install -r requirements.txt
-cp .env.example .env           # then fill in your keys
-```
+Content stage: knowledge base drafted in `content/` (not yet approved/ingested). App code hasn't been scaffolded yet — the stack is Next.js + TypeScript (see `CLAUDE.md`).
 
-## Run
+## Content
 
-```bash
-uvicorn app.main:app --reload
-```
-
-Health check: http://localhost:8000/health
-
-## Test
-
-```bash
-pytest
-```
+- `content/bio.md`, `content/projects.md`, `content/recommendations.md`, `content/ground-truth.md` — draft knowledge base sources.
+- `breno_docs/` — private raw source material (CV, letters, repo links). Gitignored, never committed.
