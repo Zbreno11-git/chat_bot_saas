@@ -1,0 +1,72 @@
+# Token-economy ignore list for Claude Code context/search scans.
+# Mirrors .gitignore where it overlaps, but also covers things that ARE
+# tracked/committed yet shouldn't be re-read or re-indexed routinely
+# (lockfiles, generated icons) or should never enter context at all
+# (secrets, private raw source docs).
+
+# --- Dependencies ---
+node_modules/
+web/node_modules/
+
+# --- Python virtualenv (repo root, from initial setup) ---
+/bin/
+/lib/
+/lib64
+/share/
+/include/
+/pyvenv.cfg
+/CACHEDIR.TAG
+.lock
+.venv/
+__pycache__/
+*.py[cod]
+
+# --- Build output / build caches ---
+web/.next/
+*.tsbuildinfo
+dist/
+build/
+out/
+
+# --- Test / lint / type-checker caches ---
+coverage/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Editor / OS ---
+.vscode/
+.idea/
+.DS_Store
+
+# --- Logs ---
+*.log
+
+# --- Large auto-generated data files (not hand-edited, rarely need reading) ---
+web/package-lock.json
+
+# --- Binaries, images, media, fonts ---
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.svg
+*.pdf
+*.woff
+*.woff2
+*.ttf
+*.mp4
+*.mov
+*.zip
+
+# --- Secrets: never scan actual env files, only the example template ---
+.env
+.env.local
+.env.*.local
+web/.env
+web/.env.local
+
+# --- Private raw source material (CV/letters/PDFs); content/ already
+# distills the public-safe version of this and stays visible ---
+breno_docs/
