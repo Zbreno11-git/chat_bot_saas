@@ -6,7 +6,7 @@ One branch and one PR per step. This file is the source of truth for what's done
 | --- | --- | --- | --- | --- |
 | 01 | Scaffold & Git Workflow | `01-nextjs-scaffold` | Done | [#1](https://github.com/Zbreno11-git/chat_bot_saas/pull/1) |
 | 02 | Database Schema (Supabase) | `02-supabase-schema` | Done | [#2](https://github.com/Zbreno11-git/chat_bot_saas/pull/2) |
-| 03 | Content Ingestion | | Todo | |
+| 03 | Content Ingestion | `03-content-ingestion` | In review | [#3](https://github.com/Zbreno11-git/chat_bot_saas/pull/3) |
 | 04 | Search & Retrieval | | Todo | |
 | 05 | Chat API (LLM adapter + citation check) | | Todo | |
 | 06 | Chat UI | | Todo | |

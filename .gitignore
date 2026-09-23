@@ -1,11 +1,12 @@
-# Virtualenv (lives in the project root)
-bin/
-lib/
-lib64
-share/
-include/
-pyvenv.cfg
-CACHEDIR.TAG
+# Virtualenv (lives in the project root only — leading slash so this doesn't
+# also match web/lib/ or any other app-code directory)
+/bin/
+/lib/
+/lib64
+/share/
+/include/
+/pyvenv.cfg
+/CACHEDIR.TAG
 .lock
 .venv/
 
