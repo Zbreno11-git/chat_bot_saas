@@ -1,9 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
 
-// Files under content/ that are internal curation notes, not public knowledge
-// for the agent (see content/README.md).
-export const EXCLUDED_CONTENT_FILES = new Set(["README.md", "ground-truth.md"]);
+// Files under content/ that are internal curation notes about the content
+// pipeline itself, not knowledge about Breno (see content/README.md).
+// ground-truth.md is NOT excluded: once answered, its Q&A pairs are
+// public-facing knowledge (see CLAUDE.md, "Content").
+export const EXCLUDED_CONTENT_FILES = new Set(["README.md"]);
 
 export type ContentFile = {
   // Path relative to content/, without the extension, e.g. "projects/lifeos-readme".
