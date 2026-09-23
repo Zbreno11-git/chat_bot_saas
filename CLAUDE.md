@@ -25,7 +25,8 @@ The full vision and roadmap is in `ask_breno_visao_roadmap.md`. It is local only
 
 | Area | Decision |
 | --- | --- |
-| App | Next.js + TypeScript, modular monolith (UI + API routes) |
+| App | Next.js + TypeScript, modular monolith (UI + API routes), lives in `web/` |
+| Package manager | npm |
 | Data | Supabase/Postgres; text search first, `pgvector` only if evals show worse retrieval |
 | AI | Gemini, behind a provider adapter (swappable) |
 | Deploy | Cloud Run |
