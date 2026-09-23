@@ -62,6 +62,6 @@ Roadmap order: 0 content + evals, 1 core (tables, ingestion, search, citations),
 - Never commit `.env` or private planning docs.
 - A Python venv lives in the repo root (`bin/`, `lib/`, `pyvenv.cfg`, ...) from initial setup; it's gitignored. The app is Next.js + TypeScript, lives in `web/` (scaffolded in step 01).
 - `.claudeignore` keeps routine context/search scans off dependencies, the venv, build/test caches, binaries, `web/package-lock.json`, actual `.env*` files, and `breno_docs/` — token economy, not a security boundary (nothing there is secret beyond the .env files, which are already gitignored).
-- Runtime env vars live in `web/.env.local` (gitignored): `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SECRET_KEY` (server-only, bypasses RLS — never prefix a secret with `NEXT_PUBLIC_`), `GEMINI_API_KEY`.
+- Runtime env vars live in `web/.env.local` (gitignored): `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SECRET_KEY` (server-only, bypasses RLS — never prefix a secret with `NEXT_PUBLIC_`), `GEMINI_API_KEY`. Optional: `GEMINI_MODEL` (defaults to `gemini-2.5-flash` in `web/lib/llm/gemini.ts`).
 - The Supabase MCP server is registered at project scope (`.mcp.json`, no secrets in it); each machine still needs to run `claude /mcp` once in a regular terminal to authenticate — that step can't be done from inside an IDE extension session.
 - Project skills are in `.claude/skills/` (see its README).

@@ -59,6 +59,19 @@ describe("filterCitations", () => {
     expect(result).toEqual([]);
   });
 
+  it("drops a citation that isn't a URL, even if it's a substring of a chunk body", () => {
+    // Regression guard: observed the model citing "projects" (the chunk's
+    // origin label) instead of the repo URL in that same chunk. "projects"
+    // trivially passes a plain substring check against a chunk whose body
+    // mentions "## Projects" or the word "project", so it isn't a link and
+    // must never reach the visitor as a citation.
+    const chunks = [makeChunk({ body: "## Projects\n\nSmart Store project. Repo: https://github.com/Zbreno11-git/example" })];
+
+    const result = filterCitations(["projects", "CV §3.3"], chunks);
+
+    expect(result).toEqual([]);
+  });
+
   it("returns an empty array when there are no chunks to ground against", () => {
     const result = filterCitations(["https://github.com/Zbreno11-git/example"], []);
 
