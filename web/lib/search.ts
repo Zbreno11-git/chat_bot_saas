@@ -1,4 +1,5 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { rerank } from "./rerank";
 
 export type SearchResult = {
   chunkId: string;
@@ -36,11 +37,24 @@ export function mapSearchRows(rows: SearchKnowledgeChunksRow[]): SearchResult[] 
   }));
 }
 
+// How many candidates to pull from Postgres before re-ranking in JS (see
+// rerank.ts). Generous on purpose: at this project's content scale (dozens
+// of chunks, not thousands), fetching most/all of what matches at all and
+// re-ranking precisely in application code is cheap and far more accurate
+// than relying on Postgres's un-weighted ts_rank alone. Revisit if the
+// knowledge base grows enough for this to matter for latency or cost.
+const CANDIDATE_POOL_SIZE = 50;
+
 // Ranked full-text search over one agent's knowledge_chunks. `supabase` must
 // be a server-side client using the secret key (see lib/supabase-admin.ts) --
 // this scopes to `agentId`, but relies on the caller to have already
 // resolved the right agent, same as the rest of the answer flow in
 // CLAUDE.md's architecture rules.
+//
+// Two stages: Postgres does recall (any chunk sharing at least one query
+// word, see the OR-matching migration), then rerank() does the actual
+// relevance ranking in JS, where it's easy to test with fixtures instead of
+// tuning SQL blind. `limit` bounds the final result, not the DB query.
 export async function searchKnowledgeChunks(
   supabase: SupabaseClient,
   agentId: string,
@@ -56,10 +70,11 @@ export async function searchKnowledgeChunks(
   const { data, error } = await supabase.rpc("search_knowledge_chunks", {
     p_agent_id: agentId,
     p_query: trimmedQuery,
-    p_limit: limit,
+    p_limit: Math.max(limit, CANDIDATE_POOL_SIZE),
   });
 
   if (error) throw error;
 
-  return mapSearchRows(data ?? []);
+  const candidates = mapSearchRows(data ?? []);
+  return rerank(trimmedQuery, candidates, limit);
 }
