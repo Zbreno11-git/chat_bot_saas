@@ -40,7 +40,7 @@ describe("listContentFiles", () => {
     tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "content-test-"));
     fs.writeFileSync(path.join(tempDir, "bio.md"), "# Bio");
     fs.writeFileSync(path.join(tempDir, "README.md"), "internal notes");
-    fs.writeFileSync(path.join(tempDir, "ground-truth.md"), "unanswered questions");
+    fs.writeFileSync(path.join(tempDir, "ground-truth.md"), "## 1. Question\n\n**Answer:**\n- answered");
     fs.writeFileSync(path.join(tempDir, "notes.txt"), "not markdown");
     fs.mkdirSync(path.join(tempDir, "projects"));
     fs.writeFileSync(path.join(tempDir, "projects", "lifeos-readme.md"), "# LifeOs");
@@ -50,11 +50,11 @@ describe("listContentFiles", () => {
     fs.rmSync(tempDir, { recursive: true, force: true });
   });
 
-  it("finds markdown files recursively, skipping excluded and non-markdown files", () => {
+  it("finds markdown files recursively, skipping README.md but keeping ground-truth.md", () => {
     const files = listContentFiles(tempDir);
     const origins = files.map((file) => file.origin).sort();
 
-    expect(origins).toEqual(["bio", "projects/lifeos-readme"]);
+    expect(origins).toEqual(["bio", "ground-truth", "projects/lifeos-readme"]);
   });
 
   it("returns absolute file paths that can be read directly", () => {
