@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
+/*
+ * Design tokens for Ask Breno. Deliberately not the generic AI-page
+ * defaults (warm cream + terracotta, or near-black + neon): a cool paper
+ * background with a deep "verified" teal as the single accent, used only
+ * for the send action, citation links and focus states -- so it reads as
+ * a functional signal (this claim is checked) rather than decoration.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #f5f6f5;
+  --ink: #14181f;
+  --ink-muted: #4b5563;
+  --accent: #1f7a5c;
+  --accent-soft: #e4ede9;
+  --line: #d8dbde;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono-data);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --paper: #10141a;
+    --ink: #e7e9ec;
+    --ink-muted: #9ca3af;
+    --accent: #33b389;
+    --accent-soft: #16241f;
+    --line: #262b33;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
 }
