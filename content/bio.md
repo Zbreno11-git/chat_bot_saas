@@ -37,11 +37,13 @@ Bachelor's in Data Science in progress. Completed the international Data Analyst
 
 ## Professional experience
 
+Breno's primary focus right now is data/AI work and landing a full-time role in that space. The Teen Health and Carnival Cruise Line entries below are secondary — extra/volunteer work, not his main occupation (see `ground-truth.md` question 3).
+
 **Teen Health Inc.** — Technology, Data & AI Solutions, Volunteer (ongoing)
-Ongoing volunteer work at this nonprofit: participates in meetings on the organization's technology needs, develops applications and digital solutions for real processes, works with APIs, product development, front-end and AI-related solutions, and advises on applying AI/automation to the organization's needs. Built the Business Card Scanner (see `projects.md`) to turn business cards collected at events into a structured contact database. Explicitly unpaid/volunteer work. Teen Health's founder also wrote a recommendation letter describing this work (see `recommendations.md`), which additionally notes Breno evaluated GCP vs. AWS for their health platform and is now pursuing AI consulting full-time.
+Ongoing volunteer work at this nonprofit, extra alongside the primary focus above: participates in meetings on the organization's technology needs, develops applications and digital solutions for real processes, works with APIs, product development, front-end and AI-related solutions, and advises on applying AI/automation to the organization's needs. Built the Business Card Scanner (see `projects.md`) to turn business cards collected at events into a structured contact database. Explicitly unpaid/volunteer work. Teen Health's founder also wrote a recommendation letter describing this work and Breno's general qualities (see `recommendations.md`), which additionally notes Breno evaluated GCP vs. AWS for their health platform.
 
 **Mayerfeld Consulting** — Data Analysis Practicum, 2026
 Practical immersion in data analysis using Python, SQL, statistics and Tableau. Completed a full case study and delivered projects in a team, in an international environment with participants from different backgrounds. Received a recommendation letter from tutor Dr. Renato Pavlekovic.
 
 **Musician — Carnival Cruise Line**, USA & Australia, 2023–present
-Professional work in a high-performance international environment with strict schedules; daily collaboration with multicultural teams; experience working across countries and time zones; professional use of English in a fully English-speaking environment.
+Secondary work, not Breno's primary occupation: professional work in a high-performance international environment with strict schedules; daily collaboration with multicultural teams; experience working across countries and time zones; professional use of English in a fully English-speaking environment.

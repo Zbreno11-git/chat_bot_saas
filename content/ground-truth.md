@@ -14,7 +14,7 @@ Full-time employment, contract/freelance work, consulting, or open to all of the
 When can you start something new? Any constraints a recruiter should know about — your Carnival Cruise Line schedule, time zones, remote vs. on-site, work authorization, location?
 
 **Answer:**
-- Immediately, I'll be home in November 17, but I have all my equipment with me right now for a remote role, for hybrid or onsite roles I'll be available in November 17, and I'll be in America/Sao Paulo timezone, on Gramado Rio Grande do Sul (I'm available for moving for a good job opportunity)
+- Immediately, I'll be home in November 17, but I have all my equipment with me right now for a remote role, for hybrid or onsite roles I'll be available in November 17, and I'll be in America/Sao Paulo timezone, on Gramado Rio Grande do Sul (I'm available for moving for a good job opportunity). Work authorization: Brazilian citizen, hold a US B1/B2 visa (tourism/business, not work authorization), no international work authorization otherwise.
 
 ## 3. How should the agent describe what you do right now?
 
