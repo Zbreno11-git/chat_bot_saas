@@ -6,24 +6,15 @@
 import { config } from "dotenv";
 import fs from "node:fs";
 import path from "node:path";
-import { createClient } from "@supabase/supabase-js";
 import { chunkMarkdown, listContentFiles } from "../lib/content";
+import { createAdminClient } from "../lib/supabase-admin";
 
 config({ path: path.join(process.cwd(), ".env.local") });
 
 const AGENT_SLUG = "ask-breno";
 const CONTENT_DIR = path.join(process.cwd(), "..", "content");
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseSecretKey = process.env.SUPABASE_SECRET_KEY;
-
-if (!supabaseUrl || !supabaseSecretKey) {
-  throw new Error("Missing NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SECRET_KEY in .env.local");
-}
-
-// Server-only client: uses the secret key, which bypasses RLS.
-// Never import this client from app code that runs in the browser.
-const supabase = createClient(supabaseUrl, supabaseSecretKey);
+const supabase = createAdminClient();
 
 async function ingestFile(agentId: string, origin: string, filePath: string) {
   const content = fs.readFileSync(filePath, "utf-8");

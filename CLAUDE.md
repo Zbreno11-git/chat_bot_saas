@@ -14,7 +14,7 @@ The full vision and roadmap is in `ask_breno_visao_roadmap.md`. It is local only
 - Claude pauses **only at the end of each step** (not mid-step) to explain, Socratically and at a level Breno can follow despite not knowing JS/TS: what was built, how, and why — decisions, trade-offs, any bug hit and how it was fixed. Chat only, nothing extra committed as a decision log.
 - Breno's background: basic Python scripts and SQL, has used Supabase, **no JavaScript/TypeScript**. Link new ideas to Python equivalents where they help.
 - Explanations in Portuguese, technical terms in English. **Code, comments and commit messages in English.**
-- Each step: its own branch, then Claude writes the code, opens a GitHub PR with the step's explanation, and squash-merges it once tests pass — no need to wait for Breno's approval first (changed 2026-09-23, same day as the mode switch above).
+- Each step: its own branch, then Claude writes the code, opens a GitHub PR, runs a self-review on its own diff (the `code-review` skill) and applies any plausible fixes it finds, then squash-merges once tests pass — no need to wait for Breno's approval first. The self-review is a second look, not a substitute for tests: Breno can still read any PR's diff and history after the fact.
 - Tests are written right after each feature, in the same step.
 - Pace: 5–10 h/week, no deadline.
 
