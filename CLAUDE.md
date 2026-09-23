@@ -14,11 +14,11 @@ The full vision and roadmap is in `ask_breno_visao_roadmap.md`. It is local only
 - Claude pauses **only at the end of each step** (not mid-step) to explain, Socratically and at a level Breno can follow despite not knowing JS/TS: what was built, how, and why — decisions, trade-offs, any bug hit and how it was fixed. Chat only, nothing extra committed as a decision log.
 - Breno's background: basic Python scripts and SQL, has used Supabase, **no JavaScript/TypeScript**. Link new ideas to Python equivalents where they help.
 - Explanations in Portuguese, technical terms in English. **Code, comments and commit messages in English.**
-- Each step: its own branch, then Claude writes the code and opens a GitHub PR with the step's explanation, then Breno reviews and merges. Claude does not commit/merge/push to main during the MVP.
+- Each step: its own branch, then Claude writes the code, opens a GitHub PR with the step's explanation, and squash-merges it once tests pass — no need to wait for Breno's approval first (changed 2026-09-23, same day as the mode switch above).
 - Tests are written right after each feature, in the same step.
 - Pace: 5–10 h/week, no deadline.
 
-**After the MVP: full mode.** Breno directs and Claude codes, and may commit, merge and push to main once the tests pass.
+**After the MVP: full mode.** Breno directs and Claude codes; the branch-per-step/PR/merge mechanics above already apply during the MVP too.
 
 ## Stack decisions
 
@@ -51,7 +51,7 @@ Roadmap order: 0 content + evals, 1 core (tables, ingestion, search, citations),
 
 ## Content
 
-- `content/` holds the draft knowledge base (bio, projects, recommendations, ground truth) built from `breno_docs/`. Not yet approved or ingested — see `content/README.md` for what's resolved and what's still open.
+- `content/` holds the knowledge base (bio, projects, recommendations, ground truth) built from `breno_docs/`, ingested by `npm run ingest` (`web/scripts/ingest.ts`) into `knowledge_sources`/`knowledge_chunks` — see `content/README.md` for what's resolved and what's still open.
 - `content/ground-truth.md` overrides the CV/letters whenever they disagree; check it before stating anything about Breno's current career status.
 - Public contact channels: email and GitHub/LinkedIn. No phone number in any public-facing content.
 - `breno_docs/` is Breno's private raw source material (CV, recommendation letters, repo links). Gitignored, never committed, never quoted verbatim into public content beyond what `content/` already distilled.
